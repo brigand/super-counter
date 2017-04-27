@@ -1,0 +1,26 @@
+.SingleCounter__404 {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.SingleCounter {
+  max-width: 60em;
+  margin: 1em auto;
+  padding: 1em;
+  background: white;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.SingleCounter__Add {
+  font-size: 3em;
+  padding: 0.5em;
+  background: hotpink;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.SingleCounter__Add:active {
+  background: limegreen;
+}

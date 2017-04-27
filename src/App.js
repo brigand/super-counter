@@ -1,19 +1,56 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom'
+import storage from './utils/storage';
+import CounterTypes from './components/CounterTypes';
+import SingleCounter from './components/SingleCounter';
 import './App.css';
 
+let basePath = '/';
+
+if (/github\.io/.test(location.hostname)) {
+  basePath = `/${location.pathname.split('/')[1] || ''}`;
+}
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCounter: null,
+    };
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Router basename={basePath}>
+          <Switch>
+            <Route path="/counter/:id" component={SingleCounter} />
+            <Route path="/" exact render={this.renderCounters.bind(this)} />
+          </Switch>
+        </Router>
       </div>
+    );
+  }
+
+  renderCounters() {
+    return (
+      <CounterTypes
+        onNewCounter={() => {
+          const counters = storage.get().counters.concat([{
+            name: `New counter`,
+            points: [],
+            id: Math.random().toString(),
+          }]);
+          storage.set({
+            ...storage.get(),
+            counters,
+          });
+        }}
+      />
     );
   }
 }

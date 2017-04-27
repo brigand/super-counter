@@ -1,0 +1,43 @@
+.CounterTypes {
+  max-width: 45em;
+  padding: 0.5em;
+  margin: 0 auto;
+  background: white;
+}
+
+.CounterTypes::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.CounterTypes__Counter {
+  display: inline-block;
+  float: left;
+  width: 10em;
+  height: 10em;
+  margin: 0.5em;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.CounterTypes__Counter__Name {
+  margin: 0.5em 0;
+}
+
+.CounterTypes__Counter__Name input {
+  margin-top: 0.5em;
+}
+
+.CounterTypes__Counter__Items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.CounterTypes__Counter--new {
+  background: rgba(100, 255, 130, 0.5);
+  cursor: pointer;
+}

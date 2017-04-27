@@ -5,8 +5,11 @@
   "private": true,
   "homepage": "https://brigand.github.io/super-counter",
   "dependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
