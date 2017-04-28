@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import TimeSince from './TimeSince';
 import storage from '../utils/storage';
 import './SingleCounter.css';
 
@@ -31,6 +32,8 @@ class SingleCounter extends React.Component {
       });
     };
 
+    const newest = item.points[item.points.length - 1];
+
     return (
       <div className="SingleCounter">
         <div className="SingleCounter__HomeLink">
@@ -44,6 +47,10 @@ class SingleCounter extends React.Component {
         >
           Add Count
         </button>
+
+        <div>
+          <strong>Last point: </strong><TimeSince time={newest.date} />
+        </div>
 
         <ul>
           {item.points.slice().reverse().map(({date}) => {
