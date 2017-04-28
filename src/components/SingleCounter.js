@@ -33,6 +33,10 @@ class SingleCounter extends React.Component {
 
     return (
       <div className="SingleCounter">
+        <div className="SingleCounter__HomeLink">
+          <Link to="/">Go home.</Link>
+        </div>
+
         <h1>{item.name}</h1>
         <button
           className="SingleCounter__Add"
