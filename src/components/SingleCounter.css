@@ -33,7 +33,8 @@
   left: 0;
   right: 50%;
   bottom: 0;
-  background: limegreen;
+  color: white;
+  background: #110435;
 }
 
 .SingleCounter__PointsPanel {
@@ -42,13 +43,15 @@
   left: 50%;
   right: 0;
   bottom: 0;
-  background: red;
+  color: white;
+  background: #00302C;
 }
 
 .SingleCounter__AboutPanel,
 .SingleCounter__GraphPanel,
 .SingleCounter__PointsPanel {
   transition: top 0.5s, left 0.5s, right 0.5s, bottom 0.5s;
+  overflow: auto;
 }
 
 .SingleCounter--closed {
@@ -79,8 +82,9 @@
 .SingleCounter__Add {
   font-size: 3em;
   padding: 0.5em;
-  background: hotpink;
-  color: white;
+  background: white;
+  width: 100%;
+  color: black;
   cursor: pointer;
   border: none;
   outline: none;
