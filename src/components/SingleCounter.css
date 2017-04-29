@@ -24,7 +24,7 @@
   left: 0;
   right: 50%;
   bottom: 50%;
-  background: hotpink;
+  background: #fee;
 }
 
 .SingleCounter__GraphPanel {
@@ -34,7 +34,7 @@
   right: 50%;
   bottom: 0;
   color: white;
-  background: #110435;
+  background: #797;
 }
 
 .SingleCounter__PointsPanel {
@@ -44,7 +44,7 @@
   right: 0;
   bottom: 0;
   color: white;
-  background: #00302C;
+  background: #335;
 }
 
 .SingleCounter__AboutPanel,
