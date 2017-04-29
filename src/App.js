@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   HashRouter as Router,
   Route,
-  Switch,
 } from 'react-router-dom'
 import storage from './utils/storage';
 import CounterTypes from './components/CounterTypes';
@@ -27,10 +26,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router basename={basePath}>
-          <Switch>
-            <Route path="/counter/:id" component={SingleCounter} />
-            <Route path="/" exact render={this.renderCounters.bind(this)} />
-          </Switch>
+          <div>
+            {this.renderCounters()}
+            <Route path="/counter/:id" children={({match, ...rest}) => {
+              return (
+                <SingleCounter open={!!match} match={match} {...rest} />
+              );
+            }} />
+          </div>
         </Router>
       </div>
     );

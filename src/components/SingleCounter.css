@@ -4,22 +4,76 @@
 }
 
 .SingleCounter {
-  max-width: 60em;
-  margin: 1em auto;
-  padding: 1em;
-  background: white;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .SingleCounter__HomeLink {
   position: absolute;
   top: 8px;
   right: 8px;
+  z-index: 100;
 }
 
 .SingleCounter__HomeLink > a {
   padding: 0.5em;
   background: white;
+}
+
+.SingleCounter__AboutPanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 50%;
+  background: hotpink;
+}
+
+.SingleCounter__GraphPanel {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  background: limegreen;
+}
+
+.SingleCounter__PointsPanel {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background: red;
+}
+
+.SingleCounter__AboutPanel,
+.SingleCounter__GraphPanel,
+.SingleCounter__PointsPanel {
+  transition: top 0.5s, left 0.5s, right 0.5s, bottom 0.5s;
+}
+
+.SingleCounter--closed {
+  pointer-events: none;
+}
+
+.SingleCounter--closed .SingleCounter__AboutPanel {
+  left: -50%;
+  bottom: 100%;
+  top: -50%;
+  right: 100%;
+}
+
+.SingleCounter--closed .SingleCounter__GraphPanel {
+  top: 100%;
+  right: 100%;
+  left: -50%;
+  bottom: -50%;
+}
+
+.SingleCounter--closed .SingleCounter__PointsPanel {
+  top: 0%;
+  right: -50%; 
+  left: 100%;
+  bottom: 0;
 }
 
 .SingleCounter__Add {
